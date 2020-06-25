@@ -11,3 +11,16 @@ C:\Users\Vinicius\Desktop\Uber\obj\Debug\netcoreapp3.1\Uber.csproj.CoreCompileIn
 C:\Users\Vinicius\Desktop\Uber\obj\Debug\netcoreapp3.1\Uber.dll
 C:\Users\Vinicius\Desktop\Uber\obj\Debug\netcoreapp3.1\Uber.pdb
 C:\Users\Vinicius\Desktop\Uber\obj\Debug\netcoreapp3.1\Uber.genruntimeconfig.cache
+C:\Users\Vinicius\Desktop\Senai\Uber\bin\Debug\netcoreapp3.1\Uber.exe
+C:\Users\Vinicius\Desktop\Senai\Uber\bin\Debug\netcoreapp3.1\Uber.deps.json
+C:\Users\Vinicius\Desktop\Senai\Uber\bin\Debug\netcoreapp3.1\Uber.runtimeconfig.json
+C:\Users\Vinicius\Desktop\Senai\Uber\bin\Debug\netcoreapp3.1\Uber.runtimeconfig.dev.json
+C:\Users\Vinicius\Desktop\Senai\Uber\bin\Debug\netcoreapp3.1\Uber.dll
+C:\Users\Vinicius\Desktop\Senai\Uber\bin\Debug\netcoreapp3.1\Uber.pdb
+C:\Users\Vinicius\Desktop\Senai\Uber\obj\Debug\netcoreapp3.1\Uber.csprojAssemblyReference.cache
+C:\Users\Vinicius\Desktop\Senai\Uber\obj\Debug\netcoreapp3.1\Uber.AssemblyInfoInputs.cache
+C:\Users\Vinicius\Desktop\Senai\Uber\obj\Debug\netcoreapp3.1\Uber.AssemblyInfo.cs
+C:\Users\Vinicius\Desktop\Senai\Uber\obj\Debug\netcoreapp3.1\Uber.csproj.CoreCompileInputs.cache
+C:\Users\Vinicius\Desktop\Senai\Uber\obj\Debug\netcoreapp3.1\Uber.dll
+C:\Users\Vinicius\Desktop\Senai\Uber\obj\Debug\netcoreapp3.1\Uber.pdb
+C:\Users\Vinicius\Desktop\Senai\Uber\obj\Debug\netcoreapp3.1\Uber.genruntimeconfig.cache

@@ -2,104 +2,86 @@
 
 namespace Uber
 {
-    class Program : Passageiro
+    class Program
     {
         static void Main(string[] args)
         {
-              Usuario user = new Usuario();
+               // Instanciamos o passageiro
+            Passageiro passageiro = new Passageiro();
 
-              Passageiro passageiro = new Passageiro();
-
-              Motorista driver = new Motorista();
-
-              Cartao card = new Cartao();
-
-              
-            passageiro.motorista = "Encontrado";
-
-            System.Console.WriteLine("Digite seu login: ");
+            System.Console.WriteLine("Digite seu login:");
             string login = Console.ReadLine();
 
-            System.Console.WriteLine("Digite sua senha: ");
+            System.Console.WriteLine("Digite sua senha:");
             string senha = Console.ReadLine();
 
+            passageiro.Login(login, senha);
 
-            user.Login(login, senha);
-
-            if(user.TokenLogin != "" && user.TokenLogin != null){
-
-                Console.WriteLine("Acesso liberado! Usuário logado");
-
-                Console.WriteLine("-------------------------------------------");
-
-                Console.WriteLine("Nos informe o numero do seu cartão:");
-
-                string numero = Console.ReadLine();
-
-                Console.WriteLine("Coloque o Titular:");
-
-                string Titular = Console.ReadLine();
-
-                Console.WriteLine("Bandeira :");
-
-                string Bandeira = Console.ReadLine();
-
-                Console.WriteLine("CVV : ");
-
-                string CVV = Console.ReadLine();
-
-                System.Console.WriteLine(card.Cadastrar());
-
-                Console.WriteLine("-------------------------------------------");
-
-                System.Console.WriteLine("Nos informe o seu local: ");
-
-                string LocalInicio = Console.ReadLine();
-
-                System.Console.WriteLine("Nos informe o seu destino: ");
-
-                string LocalChegada = Console.ReadLine();
-                Console.WriteLine("-------------------------------------------");
-
-                Console.WriteLine("Calculando Rota...");
-
-                Console.WriteLine("-------------------------------------------");
-
-                Console.WriteLine(passageiro.ProcurarMotorista());
-
-                Console.WriteLine("-------------------------------------------");
-
-
-                Console.WriteLine(passageiro.Motobrabo());
-
-                Console.WriteLine("-------------------------------------------");
-                Console.WriteLine("-------------------------------------------");
-               
+            if( passageiro.TokenLogin != "" && passageiro.TokenLogin != null ){
                 
-                Console.WriteLine("Informe nos o status da Corrida para o pagamento automático: \n -Finalizado \n -Pendente");
+                System.Console.WriteLine("Login autorizado!");
+                
+                // Instanciamos um motorista para teste
+                Motorista motorista = new Motorista();
+                motorista.Nome = "Alexandre";
+                motorista.Placa = "XPTO-3548";
+                motorista.Carro = "Ford Mustang";
 
-                passageiro.statusCorrida = Console.ReadLine();
+                // Cadastramos uma conta para o motorista
+                Conta contaMotorista = new Conta();
+                contaMotorista.Cadastrar();
 
-                if(passageiro.statusCorrida == "Finalizado"){
-                System.Console.WriteLine("Pagamento efetuado");
+                // Atribuímos dados do passageiro                
+                passageiro.Nome = "Paulo Brandao";
+                passageiro.Idade = 30;
+                passageiro.LocalizacaoAtual = "Rua 15 de piracicaba, 456";
+
+
+                // Salvamos um cartão para o usuário
+                Cartao cartao = new Cartao();
+                cartao.Cadastrar();
+
+                passageiro.SolicitarMotorista();
+                motorista.AceitarPassageiro(passageiro.Nome);
+
+                // Começamos uma corrida
+                Corrida corrida = new Corrida();
+                corrida.LocalInicio = passageiro.LocalizacaoAtual;
+                corrida.LocalChegada = "Av. Paulista, 123";
+                corrida.motorista = motorista.Nome;
+                corrida.passageiro = passageiro.Nome;
+
+                string resposta = "Não chegamos";
+
+                while(resposta != "Sim"){
+                    Console.WriteLine("Você chegou ao seu destino? Digite: Sim ou Nao");
+                    resposta = Console.ReadLine();
                 }
 
-                else{ System.Console.WriteLine("Pagamento pendente pois a corrida não foi finalizada");
-                
-                
-        }
+                // Finalizamos a corrida
+                corrida.StatusCorrida = "Finalizada";
+                passageiro.Pagar(corrida.StatusCorrida);
+                motorista.ReceberPagamento(corrida.StatusCorrida);
 
+                // Realizamos o Pagamento
+                Pagamento pgto = new Pagamento();
+                pgto.Data = DateTime.Now;
+                pgto.StatusPagamento = "Pago";
 
+                Console.WriteLine("Corrida Finalizada");
+                Console.WriteLine("Status Corrida: "+corrida.StatusCorrida);
+                Console.WriteLine("Status PGTO: "+pgto.StatusPagamento);
+                Console.WriteLine("Data e Hora: "+pgto.Data);
+                Console.WriteLine("Motorista: "+motorista.Nome);
 
-
-                
 
 
             }else{
-                Console.WriteLine("Usuario deslogado");
-                
-                
+                System.Console.WriteLine("Não é possível utilizar o app");
             }
+
+
+            
 
 
 

@@ -2,23 +2,22 @@ namespace Uber
 {
     public class Passageiro : Usuario
     {
-      public string LocalInicio{get; set;}
-        public string LocalChegada {get; set;}
-        public string statusCorrida {get; set;}             
-        public string motorista {get; set;}
-        public string passageiro {get; set;}
-
-        public string Motobrabo(){
-            if(motorista == "Encontrado"){
-                return "Motorista Encontrado     \n\nO Motorista está a caminho";
-            } return "Nenhum motorista disponivel nessa área";
+      public string SolicitarMotorista(){
+            return "Procurando motorista...";
         }
 
-        public string Cancelar(){
-            return "Corrida Candelada";
-        }
-        public string ProcurarMotorista(){
-            return "Procurando motoristas disponíveis...";
+        /// <summary>
+        /// Paga o motorista se a corrida foi finalizada
+        /// </summary>
+        /// <param name="statusCorrida">Status vindo da classe Corrida</param>
+        /// <returns>Retorna se recebeu o pgto ou não</returns>
+        public bool Pagar(string statusCorrida){
+
+            if(statusCorrida == "Finalizada"){
+                return true;
+            }
+
+            return false;
         }
 
         

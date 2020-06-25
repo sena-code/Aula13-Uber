@@ -1,10 +1,11 @@
+using System;
+
 namespace Uber
 {
-    public class Pagamento : Usuario
+    public class Pagamento
     {
-        public string Data { get; set;}
-
-        public string status {get; set;}
+            public DateTime Data { get; set; }
+        public string StatusPagamento { get; set; }
+    }
 
     }
-}
